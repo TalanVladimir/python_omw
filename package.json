@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "xlsx": "pymon ./src/xlsx/xlsx_script.py -p \"*.sql\"",
+    "parser": "pymon ./src/parser/custom_parser.py",
+    "env-install": "virtualenv -p python3 .venv",
+    "env-run": ". ./.venv/bin/activate",
+    "dev-install": "pip3 install -r requirements.txt",
+    "dev-save": "pip3 freeze > requirements.txt"
+  }
+}
