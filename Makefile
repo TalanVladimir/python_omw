@@ -1,9 +1,9 @@
-BIN=.venv/bin/
+VENV_NAME=.venv
 
 # aplinkos paleidimas
 
 start:
-	. $(BIN)activate
+	$(VENV_NAME)/bin/activate
 
 end:
 	deactivate
