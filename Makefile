@@ -1,28 +1,37 @@
-VENV_NAME=.venv
+.ONESHELL:
+VENV_DIR=.venv
+ACTIVATE_VENV:=. $(VENV_DIR)/bin/activate
+PIP=pip3
 
 # aplinkos paleidimas
 
 start:
-	$(VENV_NAME)/bin/activate
+	${ACTIVATE_VENV}
+
+echo:
+	echo ${ACTIVATE_VENV}
 
 end:
 	deactivate
 
 # aplinkos komandos
 
-env-install: # venv instaliavimas
+env:
 	virtualenv -p python3 .venv
 
-dev-install: # packages instaliavimasa
-	pip3 install -r requirements.txt
+install:
+	${PIP} install -r requirements.txt
 
-dev-save: # packages saugojimas į failą
-	pip3 freeze > requirements.txt
+save:
+	${PIP} freeze > requirements.txt
 
 # scriptai
 
-xlsx: # paleidimas pymon
+xlsx:
 	pymon ./src/xlsx/xlsx_script.py -p "*.sql"
 
-parser: # paleidimas parserio
+parser:
 	pymon ./src/parser/custom_parser.py
+
+test:
+	<TAB>@echo $(NAME);
