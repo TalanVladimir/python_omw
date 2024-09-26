@@ -32,6 +32,3 @@ xlsx:
 
 parser:
 	pymon ./src/parser/custom_parser.py
-
-test:
-	<TAB>@echo $(NAME);
